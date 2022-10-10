@@ -1,7 +1,0 @@
-
-TARGET=oshw1_32184682
-OBJECTS=oshw1_32184682.o
-$(TARGET) : $(OBJECTS)
-	gcc -o $(TARGET) $(OBJECTS)
-oshw1_32184682.o : oshw1_32184682.c
-	gcc -c oshw1_32184682.c
