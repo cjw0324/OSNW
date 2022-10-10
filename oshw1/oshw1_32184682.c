@@ -67,18 +67,19 @@ int main(int argc, char *argv[]){
 			}
 			printf("Child says that sum of numbers from %d to %d with interval of %d is %d.\n", x, y, interval, sum);  //자식프로세스 출력
 			if(sum < 1000){
-				return 0;      //종료시 반환값 0 부여
+				exit(0);      //종료시 반환값 0 부여
 			}
 			else if(sum == 1000){
-				return 1;      //종료시 반환값 1 부여
+				exit(1);      //종료시 반환값 1 부여
 			}
 			else{
-				return 2;      //종료시 반환값 2 부여
+				exit(2);      //종료시 반환값 2 부여
 			}
 		}
 	}
 	else{                  //fork 실패
 		printf("자식 프로세스 생성 실패!\n");     //fork 실패 문구 출력
+		return 0;
 	}
 
 }
