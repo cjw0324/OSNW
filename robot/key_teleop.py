@@ -13,8 +13,8 @@ def turtle_circle(speed,ang):
 	option = 0
 	while not rospy.is_shutdown():
 		while(option == 0):
-			if(speed >= 15.05):
-				speed = -15.0
+			if(speed <= 0.0):
+				speed = 0.0
 				ang = ang * -1
 				option = 1
 				#print("option = 1")
@@ -27,7 +27,7 @@ def turtle_circle(speed,ang):
 			vel.angular.x = 0
 			vel.angular.y = 0
 			vel.angular.z = ang
-			speed = speed + 0.05
+			speed = speed - 0.05
 			pub.publish(vel)
 			rate.sleep()
 		while(option > 0):
